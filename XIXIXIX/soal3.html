@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Luas Segitiga</title>
+    <style>
+        #container {
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 80px;
+        }
+        button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #hasilLuas {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Kalkulator Luas Segitiga</h2>
+        <p>Masukkan nilai alas dan tinggi segitiga:</p>
+
+        <label for="alas">Alas: </label>
+        <input type="number" id="alas"><br><br>
+
+        <label for="tinggi">Tinggi: </label>
+        <input type="number" id="tinggi"><br><br>
+
+        <button onclick="hitungLuas()">Hitung Luas</button><br><br>
+
+        <p>Luas Segitiga: <span id="hasilLuas"></span></p>
+    </div>
+
+    <script>
+        function hitungLuas() {
+            var alas = parseFloat(document.getElementById("alas").value);
+            var tinggi = parseFloat(document.getElementById("tinggi").value);
+
+            var luas = 0.5 * alas * tinggi;
+
+            document.getElementById("hasilLuas").textContent = luas;
+        }
+    </script>
+</body>
+</html>

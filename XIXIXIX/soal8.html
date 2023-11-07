@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cek Bilangan Positif atau Negatif</title>
+</head>
+<body>
+    <h2>Cek Bilangan Positif atau Negatif</h2>
+    <p>Masukkan suatu bilangan:</p>
+    <input type="number" id="bilangan" placeholder="Masukkan bilangan">
+    <button onclick="cekBilangan()">Cek</button>
+    <p id="hasil"></p>
+
+    <script>
+        function cekBilangan() {
+            var bilangan = parseFloat(document.getElementById("bilangan").value);
+            var hasil = document.getElementById("hasil");
+
+            if (isNaN(bilangan)) {
+                hasil.textContent = "Masukkan angka yang valid.";
+            } else if (bilangan > 0) {
+                hasil.textContent = bilangan + " adalah bilangan positif.";
+            } else if (bilangan < 0) {
+                hasil.textContent = bilangan + " adalah bilangan negatif.";
+            } else {
+                hasil.textContent = bilangan + " adalah nol.";
+            }
+        }
+    </script>
+</body>
+</html>

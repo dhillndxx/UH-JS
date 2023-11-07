@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style10.css">
+    <title>Cek Tahun Kabisat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .result {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cek Tahun Kabisat</h2>
+
+    <p>Masukkan tahun:</p>
+    <input type="number" id="tahunInput" placeholder="Masukkan tahun">
+    <button onclick="cekTahunKabisat()">Cek</button>
+
+    <div class="result" id="hasil"></div>
+
+    <script>
+        function cekTahunKabisat() {
+            var tahun = document.getElementById("tahunInput").value;
+            var hasil = document.getElementById("hasil");
+
+            if (tahun % 4 === 0 && (tahun % 100 !== 0 || tahun % 400 === 0)) {
+                hasil.textContent = tahun + " adalah tahun kabisat.";
+            } else {
+                hasil.textContent = tahun + " bukan tahun kabisat.";
+            }
+        }
+    </script>
+</body>
+</html>
